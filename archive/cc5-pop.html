@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+  <body>
+    <noscript>
+      <strong>Go to https://rayqua.zza.pl/cc5-pop/#/posts/{postID}, where {postID} is the string that comes after the ?post=.</strong>
+    </noscript>
+    <script>
+      // https://stackoverflow.com/a/901144
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const params = Object.fromEntries(urlSearchParams.entries());
+      let targetURL = "https://rayqua.zza.pl/cc5-pop/";
+      if (params.post) {
+        targetURL = `https://rayqua.zza.pl/cc5-pop/#/posts/${params.post}`;
+      }
+      window.location.href = targetURL;
+    </script>
+  </body>
+</html>
